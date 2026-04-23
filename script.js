@@ -1,8 +1,8 @@
-// App State
+
 let cards = [];
 let currentIndex = 0;
 
-// DOM Elements
+
 const flashcard = document.getElementById('flashcard');
 const termElement = document.getElementById('current-term');
 const definitionElement = document.getElementById('current-definition');
@@ -15,13 +15,13 @@ const masteryPercentage = document.getElementById('mastery-percentage');
 const wordsLearnedElement = document.getElementById('words-learned');
 const totalWordsElement = document.getElementById('total-words');
 
-// Load data from localStorage
+
 function loadData() {
     const savedCards = localStorage.getItem('flashcards');
     if (savedCards) {
         cards = JSON.parse(savedCards);
     } else {
-        // Default cards
+    
         cards = [
             { term: "gato", definition: "cat", learned: false },
             { term: "perro", definition: "dog", learned: false },
@@ -34,13 +34,13 @@ function loadData() {
     showCard();
 }
 
-// Save data to localStorage
+
 function saveData() {
     localStorage.setItem('flashcards', JSON.stringify(cards));
     updateProgress();
 }
 
-// Update progress display
+
 function updateProgress() {
     const total = cards.length;
     const learned = cards.filter(card => card.learned).length;
@@ -52,7 +52,7 @@ function updateProgress() {
     totalWordsElement.textContent = total;
 }
 
-// Show current card
+
 function showCard() {
     if (cards.length === 0) {
         termElement.textContent = "No cards yet";
@@ -64,16 +64,15 @@ function showCard() {
     termElement.textContent = currentCard.term;
     definitionElement.textContent = currentCard.definition;
     
-    // Reset card flip state
+    
     flashcard.classList.remove('card-flipped');
 }
 
-// Flip card
 flashcard.addEventListener('click', () => {
     flashcard.classList.toggle('card-flipped');
 });
 
-// Mark as known
+
 knowBtn.addEventListener('click', () => {
     if (cards.length > 0) {
         cards[currentIndex].learned = true;
@@ -82,7 +81,7 @@ knowBtn.addEventListener('click', () => {
     }
 });
 
-// Next card
+
 nextBtn.addEventListener('click', nextCard);
 
 function nextCard() {
@@ -91,7 +90,7 @@ function nextCard() {
     showCard();
 }
 
-// Shuffle cards
+
 shuffleBtn.addEventListener('click', () => {
     for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -101,7 +100,7 @@ shuffleBtn.addEventListener('click', () => {
     showCard();
 });
 
-// Add new card
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const term = document.getElementById('term-input').value.trim();
@@ -120,6 +119,6 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-// Initialize app
+
 document.addEventListener('DOMContentLoaded', loadData);
 
