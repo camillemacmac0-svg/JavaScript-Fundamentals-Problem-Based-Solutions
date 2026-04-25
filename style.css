@@ -15,3 +15,7 @@
 .card-front, .card-back {
         backface-visibility: hidden;
     }
+ .card-back {
+        transform: rotateY(180deg);
+    }
+}
