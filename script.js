@@ -13,3 +13,9 @@ const masteryPercentage = document.getElementById('mastery-percentage');
 const wordsLearnedElement = document.getElementById('words-learned');
 const totalWordsElement = document.getElementById('total-words');
 
+function loadData() {
+    const savedCards = localStorage.getItem('flashcards');
+    if (savedCards) {
+        cards = JSON.parse(savedCards);
+    } else {
+    
