@@ -106,4 +106,9 @@ form.addEventListener('submit', (e) => {
             learned: false
         });
         
+ saveData();
+        form.reset();
+        showCard();
+    }
+});
 
