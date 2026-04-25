@@ -54,3 +54,13 @@ function showCard() {
         definitionElement.textContent = "Add some words to start learning!";
         return;
     }
+
+    const currentCard = cards[currentIndex];
+    termElement.textContent = currentCard.term;
+    definitionElement.textContent = currentCard.definition;
+    
+    
+    flashcard.classList.remove('card-flipped');
+}
+
+
