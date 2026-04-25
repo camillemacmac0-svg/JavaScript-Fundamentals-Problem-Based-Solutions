@@ -76,4 +76,21 @@ knowBtn.addEventListener('click', () => {
     }
 });
 
+nextBtn.addEventListener('click', nextCard);
+
+function nextCard() {
+    if (cards.length === 0) return;
+    currentIndex = (currentIndex + 1) % cards.length;
+    showCard();
+}
+
+
+shuffleBtn.addEventListener('click', () => {
+    for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    currentIndex = 0;
+    showCard();
+});
 
