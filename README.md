@@ -14,3 +14,9 @@ This is a flashcard app to help you study and remember words easily.
 * Add new words you want to learn
 * Shuffle the cards to practice
 * See your progress percentage
+
+## 🟠 How I built it
+* **HTML:** Made the structure and layout
+* **CSS / Tailwind:** Made it look nice and clean
+* **JavaScript:** Made the buttons work, flip cards, and save data
+* **Local Storage:** Saves your words even if you close the page
