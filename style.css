@@ -2,4 +2,7 @@
     .content-auto {
         content-visibility: auto;
     }
-
+.card-flip {
+        perspective: 1000px;
+    }
+    
