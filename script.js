@@ -47,3 +47,10 @@ function updateProgress() {
     totalWordsElement.textContent = total;
 }
 
+
+function showCard() {
+    if (cards.length === 0) {
+        termElement.textContent = "No cards yet";
+        definitionElement.textContent = "Add some words to start learning!";
+        return;
+    }
