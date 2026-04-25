@@ -36,4 +36,14 @@ function saveData() {
     updateProgress();
 }
 
+function updateProgress() {
+    const total = cards.length;
+    const learned = cards.filter(card => card.learned).length;
+    const percentage = total > 0 ? Math.round((learned / total) * 100) : 0;
+    
+    progressBar.style.width = `${percentage}%`;
+    masteryPercentage.textContent = `${percentage}%`;
+    wordsLearnedElement.textContent = learned;
+    totalWordsElement.textContent = total;
+}
 
