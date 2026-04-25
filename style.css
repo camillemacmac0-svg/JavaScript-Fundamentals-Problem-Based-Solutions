@@ -5,4 +5,8 @@
 .card-flip {
         perspective: 1000px;
     }
+.card-inner {
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
     
