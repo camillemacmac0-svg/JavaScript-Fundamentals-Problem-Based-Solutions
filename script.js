@@ -19,3 +19,14 @@ function loadData() {
         cards = JSON.parse(savedCards);
     } else {
     
+ cards = [
+            { term: "gato", definition: "cat", learned: false },
+            { term: "perro", definition: "dog", learned: false },
+            { term: "casa", definition: "house", learned: false },
+            { term: "libro", definition: "book", learned: false }
+        ];
+        saveData();
+    }
+    updateProgress();
+    showCard();
+}
