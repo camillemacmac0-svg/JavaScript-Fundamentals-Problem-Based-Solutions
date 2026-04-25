@@ -112,3 +112,4 @@ form.addEventListener('submit', (e) => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', loadData);
