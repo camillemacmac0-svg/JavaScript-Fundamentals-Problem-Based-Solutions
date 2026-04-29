@@ -1,4 +1,4 @@
-# JavaScript-Fundamentals-Problem-Based-Solutions
+# camillemacmac-JavaScript-Fundamentals-Problem-Based-Solutions
 Make a solutions using Html, Css, and JavaScript
 
 # Micro-Learning Flashcards
