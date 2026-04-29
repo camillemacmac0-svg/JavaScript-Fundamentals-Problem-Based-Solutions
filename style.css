@@ -1,10 +1,5 @@
 @layer utilities {
-    .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text -align: center;
-        width: 100%;
+    
     .content-auto {
         content-visibility: auto;
     }
