@@ -1,7 +1,7 @@
 let cards = [];
 let currentIndex = 0;
 
-// DOM Elements
+
 const flashcard = document.getElementById('flashcard');
 const termElement = document.getElementById('current-term');
 const definitionElement = document.getElementById('current-definition');
@@ -19,7 +19,7 @@ function loadData() {
     if (savedCards) {
         cards = JSON.parse(savedCards);
     } else {
-        // Default cards
+        
         cards = [
             { term: "gato", definition: "cat", learned: false },
             { term: "perro", definition: "dog", learned: false },
