@@ -161,3 +161,10 @@ input {
     border-radius: 8px;
     font-size: 1rem;
 }
+
+.submit-btn {
+    background: #2563eb;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+}
