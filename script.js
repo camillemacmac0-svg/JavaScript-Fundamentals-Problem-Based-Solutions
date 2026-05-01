@@ -14,10 +14,6 @@ const masteryPercentage = document.getElementById('mastery-percentage');
 const wordsLearnedElement = document.getElementById('words-learned');
 const totalWordsElement = document.getElementById('total-words');
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 function loadData() {
     const savedCards = localStorage.getItem('flashcards');
     if (savedCards) {
@@ -36,19 +32,11 @@ function loadData() {
     showCard();
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 function saveData() {
     localStorage.setItem('flashcards', JSON.stringify(cards));
     updateProgress();
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 function updateProgress() {
     const total = cards.length;
     const learned = cards.filter(card => card.learned).length;
@@ -60,10 +48,6 @@ function updateProgress() {
     totalWordsElement.textContent = total;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 function showCard() {
     if (cards.length === 0) {
         termElement.textContent = "No cards yet";
@@ -79,18 +63,10 @@ function showCard() {
     flashcard.classList.remove('card-flipped');
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 flashcard.addEventListener('click', () => {
     flashcard.classList.toggle('card-flipped');
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 knowBtn.addEventListener('click', () => {
     if (cards.length > 0) {
         cards[currentIndex].learned = true;
@@ -99,10 +75,6 @@ knowBtn.addEventListener('click', () => {
     }
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 nextBtn.addEventListener('click', nextCard);
 
 function nextCard() {
@@ -111,10 +83,6 @@ function nextCard() {
     showCard();
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 shuffleBtn.addEventListener('click', () => {
     for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -124,10 +92,6 @@ shuffleBtn.addEventListener('click', () => {
     showCard();
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const term = document.getElementById('term-input').value.trim();
@@ -146,8 +110,4 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 document.addEventListener('DOMContentLoaded', loadData);
