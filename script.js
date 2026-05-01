@@ -31,3 +31,8 @@ function loadData() {
     updateProgress();
     showCard();
 }
+
+function saveData() {
+    localStorage.setItem('flashcards', JSON.stringify(cards));
+    updateProgress();
+}
