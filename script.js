@@ -91,3 +91,21 @@ shuffleBtn.addEventListener('click', () => {
     currentIndex = 0;
     showCard();
 });
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const term = document.getElementById('term-input').value.trim();
+    const definition = document.getElementById('definition-input').value.trim();
+    
+    if (term && definition) {
+        cards.push({
+            term: term,
+            definition: definition,
+            learned: false
+        });
+        
+        saveData();
+        form.reset();
+        showCard();
+    }
+});
