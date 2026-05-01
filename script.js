@@ -59,6 +59,18 @@ function showCard() {
     termElement.textContent = currentCard.term;
     definitionElement.textContent = currentCard.definition;
     
-    // Reset card to front side
+
     flashcard.classList.remove('card-flipped');
 }
+
+flashcard.addEventListener('click', () => {
+    flashcard.classList.toggle('card-flipped');
+});
+
+knowBtn.addEventListener('click', () => {
+    if (cards.length > 0) {
+        cards[currentIndex].learned = true;
+        saveData();
+        nextCard();
+    }
+});
