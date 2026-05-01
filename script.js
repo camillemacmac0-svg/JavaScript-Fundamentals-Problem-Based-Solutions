@@ -109,3 +109,5 @@ form.addEventListener('submit', (e) => {
         showCard();
     }
 });
+
+document.addEventListener('DOMContentLoaded', loadData);
