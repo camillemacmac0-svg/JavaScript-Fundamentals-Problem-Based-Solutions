@@ -47,3 +47,18 @@ function updateProgress() {
     wordsLearnedElement.textContent = learned;
     totalWordsElement.textContent = total;
 }
+
+function showCard() {
+    if (cards.length === 0) {
+        termElement.textContent = "No cards yet";
+        definitionElement.textContent = "Add some words to start learning!";
+        return;
+    }
+    
+    const currentCard = cards[currentIndex];
+    termElement.textContent = currentCard.term;
+    definitionElement.textContent = currentCard.definition;
+    
+    // Reset card to front side
+    flashcard.classList.remove('card-flipped');
+}
