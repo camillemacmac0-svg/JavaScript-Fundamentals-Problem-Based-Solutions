@@ -28,3 +28,19 @@ header p { font-size: 1.1rem; opacity: 0.9; }
     width: 98%; /* LONG */
     max-width: 100%;
 }
+#add-section {
+    background: white;
+    padding: 12px 18px;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 90%; /* SMALL */
+    max-width: 750px;
+}
+.card-flip {
+    perspective: 1000px;
+    width: 90%; /* SMALL */
+    max-width: 750px;
+    height: 220px;
+    margin: 15px auto;
+}
