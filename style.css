@@ -91,6 +91,7 @@ header p { font-size: 1.1rem; opacity: 0.9; }
     color: #9ca3af;
     margin-top: 8px;
 }
+
 .progress-header {
     display: flex;
     justify-content: space-between;
@@ -121,4 +122,42 @@ header p { font-size: 1.1rem; opacity: 0.9; }
     background: #10b981;
     width: 0%;
     transition: width 0.5s;
+}
+.progress-text {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#know-btn { background: #10b981; }
+#next-btn { background: #2563eb; }
+#shuffle-btn { background: #6b7280; }
+
+#add-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
 }
