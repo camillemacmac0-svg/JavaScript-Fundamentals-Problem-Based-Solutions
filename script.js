@@ -14,4 +14,20 @@ const masteryPercentage = document.getElementById('mastery-percentage');
 const wordsLearnedElement = document.getElementById('words-learned');
 const totalWordsElement = document.getElementById('total-words');
 
-
+function loadData() {
+    const savedCards = localStorage.getItem('flashcards');
+    if (savedCards) {
+        cards = JSON.parse(savedCards);
+    } else {
+        // Default cards
+        cards = [
+            { term: "gato", definition: "cat", learned: false },
+            { term: "perro", definition: "dog", learned: false },
+            { term: "casa", definition: "house", learned: false },
+            { term: "libro", definition: "book", learned: false }
+        ];
+        saveData();
+    }
+    updateProgress();
+    showCard();
+}
