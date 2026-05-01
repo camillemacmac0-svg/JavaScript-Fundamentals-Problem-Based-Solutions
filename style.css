@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
+<<<<<<< HEAD
 }
 
 body {
@@ -180,5 +181,179 @@ input {
     width: 100%;
     padding: 14px;
     font-size: 1.1rem;
+=======
+>>>>>>> 6d5b9906e32090d9b159c0bd13e86278f7704791
 }
 
+body {
+    background: #f0f4f8;
+}
+
+header {
+    background: #51da02;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+header h1 { font-size: 2.2rem; }
+
+header h1::before {
+    content: "📚 ";
+}
+
+header h1::after {
+    content: " 📚";
+}
+
+header p { font-size: 1.1rem; opacity: 0.9; }
+
+#progress-section {
+    background: white;
+    padding: 12px 18px;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 98%; /* LONG */
+    max-width: 100%;
+}
+#add-section {
+    background: white;
+    padding: 12px 18px;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 90%; /* SMALL */
+    max-width: 750px;
+}
+
+.card-flip {
+    perspective: 1000px;
+    width: 90%; /* SMALL */
+    max-width: 750px;
+    height: 220px;
+    margin: 15px auto;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid #e5e7eb;
+}
+
+.card-front { background: white; }
+.card-back { background: #eff6ff; transform: rotateY(180deg); }
+
+#current-term {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+#current-definition {
+    font-size: 2.2rem;
+    color: #2563eb;
+}
+
+.card-front p {
+    font-size: 1rem;
+    color: #9ca3af;
+    margin-top: 8px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.progress-header h2 {
+    font-size: 1.2rem;
+}
+
+#mastery-percentage {
+    font-size: 14px;
+    font-weight: bold;
+    color: #10b981;
+}
+
+.progress-bar-container {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+#progress-bar {
+    height: 100%;
+    background: #10b981;
+    width: 0%;
+    transition: width 0.5s;
+}
+.progress-text {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#know-btn { background: #10b981; }
+#next-btn { background: #2563eb; }
+#shuffle-btn { background: #6b7280; }
+
+#add-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background: #2563eb;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+}
