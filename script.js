@@ -52,66 +52,23 @@ function updateProgress() {
     totalWordsElement.textContent = total;
 }
 
-function showCard() {
-    if (cards.length === 0) {
-        termElement.textContent = "No cards yet";
-        definitionElement.textContent = "Add some words to start learning!";
-        return;
-    }
-    
-    const currentCard = cards[currentIndex];
-    termElement.textContent = currentCard.term;
-    definitionElement.textContent = currentCard.definition;
-    
+function arrangeCardOrder() {
 
-    flashcard.classList.remove('card-flipped');
+    const notTouched = cards.filter(card =>
+        card.markedUnmastered === false &&
+        card.learned === false
+    );
+
+    const unmastered = cards.filter(card =>
+        card.markedUnmastered === true
+    );
+
+    const mastered = cards.filter(card =>
+        card.learned === true
+    );
+
+    cards = [...notTouched, ...unmastered, ...mastered];
 }
 
-flashcard.addEventListener('click', () => {
-    flashcard.classList.toggle('card-flipped');
-});
-
-knowBtn.addEventListener('click', () => {
-    if (cards.length > 0) {
-        cards[currentIndex].learned = true;
-        saveData();
-        nextCard();
-    }
-});
-
-nextBtn.addEventListener('click', nextCard);
-
-function nextCard() {
-    if (cards.length === 0) return;
-    currentIndex = (currentIndex + 1) % cards.length;
-    showCard();
-}
-
-shuffleBtn.addEventListener('click', () => {
-    for (let i = cards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [cards[i], cards[j]] = [cards[j], cards[i]];
-    }
-    currentIndex = 0;
-    showCard();
-});
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const term = document.getElementById('term-input').value.trim();
-    const definition = document.getElementById('definition-input').value.trim();
-    
-    if (term && definition) {
-        cards.push({
-            term: term,
-            definition: definition,
-            learned: false
-        });
-        
-        saveData();
-        form.reset();
-        showCard();
-    }
-});
 
 document.addEventListener('DOMContentLoaded', loadData);
