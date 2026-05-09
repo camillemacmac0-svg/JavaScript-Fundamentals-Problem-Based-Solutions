@@ -189,8 +189,18 @@ const notTouched = cards.filter(card =>
 
         return;
     }
-        
+    
+currentIndex = 0;
 
+    const currentCard = cards[currentIndex];
+
+    termElement.textContent = currentCard.term;
+    definitionElement.textContent =
+        currentCard.definition;
+
+    flashcard.classList.remove('card-flipped');
+    flipCount = 0;
+}
 
 
 
