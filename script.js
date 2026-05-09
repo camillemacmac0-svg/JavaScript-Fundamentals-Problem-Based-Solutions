@@ -348,5 +348,17 @@ knowBtn.addEventListener('click', () => {
     showCard();
 });
 
-    
+nextBtn.addEventListener('click', () => {
+
+    if (cards.length > 0) {
+
+        cards[currentIndex].learned = false;
+        cards[currentIndex].markedUnmastered = true;
+
+        saveData();
+        arrangeCardOrder();
+
+        showCard();
+    }
+});
 document.addEventListener('DOMContentLoaded', loadData);
