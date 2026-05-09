@@ -219,7 +219,42 @@ function showOnlySelectedUnmastered() {
                 "🎉 You have already mastered all words!\n\nPlease add new words to continue learning."
             );
 
-        } 
+        } else {
+
+            alert(
+                "⚠️ You have no unmastered words yet!\n\nPlease click 'NOT MASTERED' on the words you want to review."
+            );
+        }
+
+        return;
+    }
+
+    alert(
+        "📖 You haven't mastered all words yet.\nLet's review them now!"
+    );
+
+    flashcard.style.display = 'none';
+
+    const oldContainer =
+        document.getElementById('all-words-container');
+
+    if (oldContainer) oldContainer.remove();
+
+    const allContainer =
+        document.createElement('div');
+
+    allContainer.id = 'all-words-container';
+
+    allContainer.style.display = 'grid';
+    allContainer.style.gridTemplateColumns = '1fr 1fr';
+    allContainer.style.gap = '15px';
+    allContainer.style.padding = '20px';
+
+    flashcard.parentNode.insertBefore(
+        allContainer,
+        flashcard.nextSibling
+    );
+ 
 
 
 
