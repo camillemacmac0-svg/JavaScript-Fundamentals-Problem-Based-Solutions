@@ -202,6 +202,24 @@ currentIndex = 0;
     flipCount = 0;
 }
 
+function showOnlySelectedUnmastered() {
+
+    const unmasteredList = cards.filter(card =>
+        card.markedUnmastered === true
+    );
+
+    if (unmasteredList.length === 0) {
+
+        const allLearned =
+            cards.every(card => card.learned === true);
+
+        if (allLearned) {
+
+            alert(
+                "🎉 You have already mastered all words!\n\nPlease add new words to continue learning."
+            );
+
+        } 
 
 
 
