@@ -411,8 +411,40 @@ form.addEventListener('submit', (e) => {
     }
 });
 
+reviewBtn.addEventListener('click', () => {
 
+    if (!isShowAllMode) {
 
+        lastIndex = currentIndex;
 
+        showOnlySelectedUnmastered();
+
+    } else {
+
+        isShowAllMode = false;
+
+        flashcard.style.display = 'block';
+
+        const allContainer =
+            document.getElementById('all-words-container');
+
+        if (allContainer) allContainer.remove();
+
+        reviewBtn.textContent =
+            "Review Unmastered";
+
+        reviewBtn.style.background = "#ef4444";
+
+        arrangeCardOrder();
+
+        currentIndex = lastIndex;
+
+        if (currentIndex >= cards.length) {
+            currentIndex = 0;
+        }
+
+        showCard();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', loadData);
