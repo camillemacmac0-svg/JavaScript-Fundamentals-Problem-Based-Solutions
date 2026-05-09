@@ -301,5 +301,19 @@ if (currentIndex < 0) currentIndex = 0;
     isShowAllMode = true;
 }
 
+flashcard.addEventListener('click', () => {
+
+    if (flipCount === 0) {
+
+        flashcard.classList.add('card-flipped');
+        flipCount = 1;
+
+    } else if (flipCount === 1) {
+
+        flashcard.classList.remove('card-flipped');
+        flipCount = 2;
+
+    } })
+
     
 document.addEventListener('DOMContentLoaded', loadData);
