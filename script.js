@@ -70,5 +70,37 @@ function arrangeCardOrder() {
     cards = [...notTouched, ...unmastered, ...mastered];
 }
 
+function showCard() {
 
+    flashcard.style.display = "block";
+
+    const oldScreen = document.getElementById("status-screen");
+    if (oldScreen) oldScreen.remove();
+
+    if (cards.length === 0) {
+        termElement.textContent = "No cards yet";
+        definitionElement.textContent =
+            "Add some words to start learning!";
+        return;
+    }
+
+    if (isShowAllMode) {
+
+        const currentCard = cards[currentIndex];
+
+        termElement.textContent = currentCard.term;
+        definitionElement.textContent =
+            currentCard.definition;
+
+        flashcard.classList.remove('card-flipped');
+        flipCount = 0;
+
+        return;
+    }
+
+
+
+
+
+    
 document.addEventListener('DOMContentLoaded', loadData);
