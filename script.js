@@ -1,6 +1,8 @@
 let cards = [];
 let currentIndex = 0;
-
+let isShowAllMode = false;
+let lastIndex = 0;
+let flipCount = 0;
 
 const flashcard = document.getElementById('flashcard');
 const termElement = document.getElementById('current-term');
