@@ -19,20 +19,18 @@ const totalWordsElement = document.getElementById('total-words');
 
 
 function loadData() {
-    const savedCards = localStorage.getItem('flashcards');
-    if (savedCards) {
-        cards = JSON.parse(savedCards);
-    } else {
-        
-        cards = [
-            { term: "gato", definition: "cat", learned: false },
-            { term: "perro", definition: "dog", learned: false },
-            { term: "casa", definition: "house", learned: false },
-            { term: "libro", definition: "book", learned: false }
-        ];
-        saveData();
-    }
+    cards = [
+        { term: "agua", definition: "water", learned: false, markedUnmastered: false },
+        { term: "gato", definition: "cat", learned: false, markedUnmastered: false },
+        { term: "luna", definition: "moon", learned: false, markedUnmastered: false },
+        { term: "perro", definition: "dog", learned: false, markedUnmastered: false },
+        { term: "amigo", definition: "friend", learned: false, markedUnmastered: false },
+        { term: "casa", definition: "house", learned: false, markedUnmastered: false }
+    ];
+
+    saveData();
     updateProgress();
+    arrangeCardOrder();
     showCard();
 }
 
@@ -43,9 +41,11 @@ function saveData() {
 
 function updateProgress() {
     const total = cards.length;
-    const learned = cards.filter(card => card.learned).length;
-    const percentage = total > 0 ? Math.round((learned / total) * 100) : 0;
-    
+    const learned = cards.filter(card => card.learned === true).length;
+    const percentage = total > 0
+        ? Math.round((learned / total) * 100)
+        : 0;
+
     progressBar.style.width = `${percentage}%`;
     masteryPercentage.textContent = `${percentage}%`;
     wordsLearnedElement.textContent = learned;
