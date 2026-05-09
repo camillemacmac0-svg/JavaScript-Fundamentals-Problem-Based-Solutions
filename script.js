@@ -287,8 +287,19 @@ function showOnlySelectedUnmastered() {
                 c => c.term === card.term
             );
 
+if (currentIndex < 0) currentIndex = 0;
 
+            showCard();
+        };
 
+        allContainer.appendChild(wordBox);
+    });
+
+    reviewBtn.textContent = "Back to Normal";
+    reviewBtn.style.background = "#6b7280";
+
+    isShowAllMode = true;
+}
 
     
 document.addEventListener('DOMContentLoaded', loadData);
