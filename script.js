@@ -156,8 +156,21 @@ const notTouched = cards.filter(card =>
                 </div>
             `;
 
-        }
+        } else {
 
+            screen.innerHTML = `
+                <div style="text-align:center;padding:10px;">
+                    <div style="
+                        font-size:2rem;
+                        font-weight:bold;
+                        color:#dc2626;
+                        margin-bottom:15px;
+                    ">
+                        📖 You Haven't Mastered<br>
+                        All Words Yet
+                    </div>
+
+                    <div style="
 
         
 
