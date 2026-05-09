@@ -377,4 +377,42 @@ shuffleBtn.addEventListener('click', () => {
 
     showCard();
 });
+
+form.addEventListener('submit', (e) => {
+
+    e.preventDefault();
+
+    const term =
+        document.getElementById('term-input')
+        .value.trim();
+
+    const definition =
+        document.getElementById('definition-input')
+        .value.trim();
+
+    if (term && definition) {
+
+        cards.push({
+            term: term,
+            definition: definition,
+            learned: false,
+            markedUnmastered: false
+        });
+
+        saveData();
+
+        form.reset();
+
+        arrangeCardOrder();
+
+        currentIndex = 0;
+
+        showCard();
+    }
+});
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', loadData);
