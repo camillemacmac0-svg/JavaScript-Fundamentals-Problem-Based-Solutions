@@ -254,7 +254,39 @@ function showOnlySelectedUnmastered() {
         allContainer,
         flashcard.nextSibling
     );
- 
+
+    unmasteredList.forEach((card) => {
+
+        const wordBox =
+            document.createElement('div');
+
+        wordBox.style.background = 'white';
+        wordBox.style.padding = '15px';
+        wordBox.style.borderRadius = '10px';
+        wordBox.style.boxShadow =
+            '0 2px 5px rgba(0,0,0,0.1)';
+
+        wordBox.innerHTML = `<strong>${card.term}</strong>`;
+
+        wordBox.style.cursor = 'pointer';
+
+        wordBox.onclick = function() {
+
+            isShowAllMode = true;
+
+            flashcard.style.display = 'block';
+
+            allContainer.remove();
+
+            reviewBtn.textContent =
+                "Review Unmastered";
+
+            reviewBtn.style.background = "#ef4444";
+
+            currentIndex = cards.findIndex(
+                c => c.term === card.term
+            );
+
 
 
 
