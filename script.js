@@ -97,6 +97,21 @@ function showCard() {
 
         return;
     }
+const notTouched = cards.filter(card =>
+        card.markedUnmastered === false &&
+        card.learned === false
+    );
+
+    const allLearned =
+        cards.length > 0 &&
+        cards.every(card => card.learned === true);
+
+    if (notTouched.length === 0) {
+
+        flashcard.style.display = "none";
+
+        let screen =
+            document.getElementById("status-screen");
 
 
 
