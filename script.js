@@ -332,6 +332,21 @@ knowBtn.addEventListener('click', () => {
         cards.every(card => card.learned === true);
 
     if (allLearned) {
+ termElement.textContent =
+            "🎉 You mastered all words!";
+
+        definitionElement.textContent =
+            "📚 Add new words to learn more\n👇 Tap here to review all words";
+
+        flashcard.classList.remove('card-flipped');
+
+        isShowAllMode = false;
+
+        return;
+    }
+
+    showCard();
+});
 
     
 document.addEventListener('DOMContentLoaded', loadData);
