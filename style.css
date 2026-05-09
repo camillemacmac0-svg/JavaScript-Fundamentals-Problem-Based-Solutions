@@ -139,27 +139,48 @@ header p { font-size: 1.1rem; opacity: 0.9; }
     color: #6b7280;
 }
 
-
 .buttons {
     display: flex;
-    gap: 12px;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 15px;
 }
 
-button {
-    padding: 12px 24px;
+.buttons button {
+    padding: 12px 20px;
     border: none;
     border-radius: 8px;
-    color: white;
     font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-#know-btn { background: #2eebac; }
-#next-btn { background: #2563eb; }
-#shuffle-btn { background: #6b7280; }
+#know-btn {
+    background: #10b981; /* Green */
+    color: white;
+}
 
+#next-btn {
+    background: #ef4444; /* Red */
+    color: white;
+}
+
+#shuffle-btn {
+    background: #3b82f6; /* Blue */
+    color: white;
+}
+
+#review-btn {
+    background: #f59e0b; /* Orange */
+    color: white;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
 
 #add-section h2 {
     font-size: 1.2rem;
@@ -180,5 +201,4 @@ input {
     width: 100%;
     padding: 14px;
     font-size: 1.1rem;
-
 }
