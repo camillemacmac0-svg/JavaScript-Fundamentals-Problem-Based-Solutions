@@ -315,5 +315,23 @@ flashcard.addEventListener('click', () => {
 
     } })
 
+knowBtn.addEventListener('click', () => {
+
+    if (cards.length === 0) return;
+
+    if (!cards[currentIndex].learned) {
+
+        cards[currentIndex].learned = true;
+        cards[currentIndex].markedUnmastered = false;
+
+        saveData();
+        arrangeCardOrder();
+    }
+
+    const allLearned =
+        cards.every(card => card.learned === true);
+
+    if (allLearned) {
+
     
 document.addEventListener('DOMContentLoaded', loadData);
