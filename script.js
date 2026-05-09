@@ -113,6 +113,39 @@ const notTouched = cards.filter(card =>
         let screen =
             document.getElementById("status-screen");
 
+        if (!screen) {
+
+            screen = document.createElement("div");
+            screen.id = "status-screen";
+
+            screen.style.width = "90%";
+            screen.style.maxWidth = "750px";
+            screen.style.height = "220px";
+            screen.style.margin = "15px auto";
+
+            screen.style.background = "#ffffff";
+            screen.style.borderRadius = "8px";
+            screen.style.border = "2px solid #ef4444";
+
+            screen.style.display = "flex";
+            screen.style.flexDirection = "column";
+            screen.style.justifyContent = "center";
+            screen.style.alignItems = "center";
+
+            screen.style.boxShadow =
+                "0 2px 5px rgba(0,0,0,0.1)";
+
+            flashcard.parentNode.insertBefore(
+                screen,
+                flashcard
+            );
+        }
+
+        
+
+
+        
+
 
 
 
