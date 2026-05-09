@@ -141,7 +141,22 @@ const notTouched = cards.filter(card =>
             );
         }
 
-        
+        if (allLearned) {
+
+            screen.innerHTML = `
+
+                    <div style="
+                        font-size:1.2rem;
+                        color:#1e40af;
+                        line-height:1.6;
+                    ">
+                        📚 Add new words to continue learning<br><br>
+                        🔄 Use <strong>Review Unmastered</strong> anytime
+                    </div>
+                </div>
+            `;
+
+        }
 
 
         
