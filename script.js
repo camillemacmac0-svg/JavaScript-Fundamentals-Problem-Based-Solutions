@@ -172,6 +172,23 @@ const notTouched = cards.filter(card =>
 
                     <div style="
 
+                     <div style="
+                        font-size:1.2rem;
+                        color:#1e40af;
+                        line-height:1.6;
+                    ">
+                        Click <strong>"Review Unmastered"</strong><br>
+                        to continue learning your words.
+                    </div>
+                </div>
+            `;
+        }
+
+        flashcard.classList.remove('card-flipped');
+        flipCount = 0;
+
+        return;
+    }
         
 
 
