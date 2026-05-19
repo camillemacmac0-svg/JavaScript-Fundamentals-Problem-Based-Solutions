@@ -336,7 +336,7 @@ knowBtn.addEventListener('click', () => {
             "🎉 You mastered all words!";
 
         definitionElement.textContent =
-            "📚 Add new words to learn more\n👇 Tap here to review all words";
+            "📚 Add new words to learn more";
 
         flashcard.classList.remove('card-flipped');
 
